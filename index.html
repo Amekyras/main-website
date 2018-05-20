@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html>
-<script>
-function acceptCookies() {
-				if(Cookies.get("blackThunderFLLCookiePolicy__Accepted") != "true") {
-					Cookies.set("blackThunderFLLCookiePolicy__Accepted", "true");
-					window.location = "cookies.html"
-				}
+	<head>
+		<script src="cookies.js"></script>
+	</head>
+	<script>
+		function acceptCookies() {
+			if(Cookies.get("blackThunderFLLCookiePolicy__Accepted") != "true") {
+				Cookies.set("blackThunderFLLCookiePolicy__Accepted", "true");
+				window.location = "cookies.html"
 			}
-      </script>
-      <body>
-      <button onclick="acceptCookies()">Accept</button>
-      </body>
-      </html>
+		}
+	</script>
+	<body>
+		<button onclick="acceptCookies()">Accept</button>
+	<body>
+</html>
