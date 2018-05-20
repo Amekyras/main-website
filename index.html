@@ -4,6 +4,9 @@
 		<script src="cookies.js"></script>
 	</head>
 	<script>
+		if(Cookies.get("blackThunderFLLCookiePolicy__Accepted") == "true") {
+			window.location = "/"
+		}
 		function acceptCookies() {
 			if(Cookies.get("blackThunderFLLCookiePolicy__Accepted") != "true") {
 				Cookies.set("blackThunderFLLCookiePolicy__Accepted", "true");
