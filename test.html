@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="/assets/roboto-mono.css" rel="stylesheet">
+		<title>Black Thunder | FLL</title>
+		<meta charset="utf-8"/>
+		<meta name="description" content="Black Thunder: A FLL team from Reading School, UK">
+		<meta name='author' content='Black Thunder'/>
+		<link rel="shortcut icon" href="/graphics/logo-round.ico" />
+		<script src="/assets/jquery-3.2.1.min.js"></script>
+		<script src='/assets/home.js'></script>
+		<script src="/assets/cookies.js"></script>
+		<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+		<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a604622fcaa9380"></script>
+		<link rel="stylesheet" type="text/css" href="/assets/home.css">
+		<link rel="stylesheet" type="text/css" href="/assets/global.css">
+		<script>
+			<!-- // CHECK COOKIE POLICY HAS BEEN ACCEPTED // -->
+
+			<!-- if(Cookies.get("blackThunderFLLCookiePolicy__Accepted") != "true") { -->
+				<!-- window.location = "/cookieSplash" -->
+			<!-- } -->
+			
+			<!-- // END OF COOKIE POLICY CHECK // -->
+			
+			
+// Creare's 'Implied Consent' EU Cookie Law Banner v:2.4
+// Conceived by Robert Kent, James Bavington & Tom Foyster
+var dropCookie = true; // false disables the Cookie, allowing you to style the banner
+var cookieDuration = 14; // Number of days before the cookie expires, and the banner reappears
+var cookieName = 'complianceCookie'; // Name of our cookie
+var cookieValue = 'on'; // Value of cookie
+function createDiv(){
+var bodytag = document.getElementsByTagName('body')[0];
+var div = document.createElement('div');
+div.setAttribute('id','cookie-law');
+div.innerHTML = '<p>Our website uses cookies. By continuing we assume your permission to deploy cookies, as detailed in our <a href="/privacy-cookies-policy/" rel="nofollow" title="Privacy &amp; Cookies Policy">privacy and cookies policy</a>. <a class="close-cookie-banner" href="javascript:void(0);" onclick="removeMe();"><span>X</span></a></p>';
+// Be advised the Close Banner 'X' link requires jQuery
+// bodytag.appendChild(div); // Adds the Cookie Law Banner just before the closing </body> tag
+// or
+bodytag.insertBefore(div,bodytag.firstChild); // Adds the Cookie Law Banner just after the opening <body> tag
+document.getElementsByTagName('body')[0].className+=' cookiebanner'; //Adds a class tothe <body> tag when the banner is visible
+createCookie(window.cookieName,window.cookieValue, window.cookieDuration); // Create the cookie
+}
+function createCookie(name,value,days) {
+if (days) {
+var date = new Date();
+date.setTime(date.getTime()+(days*24*60*60*1000));
+var expires = "; expires="+date.toGMTString();
+}
+else var expires = "";
+if(window.dropCookie) {
+document.cookie = name+"="+value+expires+"; path=/";
+}
+}
+function checkCookie(name) {
+var nameEQ = name + "=";
+var ca = document.cookie.split(';');
+for(var i=0;i < ca.length;i++) {
+var c = ca[i];
+while (c.charAt(0)==' ') c = c.substring(1,c.length);
+if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+}
+return null;
+}
+function eraseCookie(name) {
+createCookie(name,"",-1);
+}
+window.onload = function(){
+if(checkCookie(window.cookieName) != window.cookieValue){
+createDiv();
+}
+}
+function removeMe(){
+var element = document.getElementById('cookie-law');
+element.parentNode.removeChild(element);
+}
+			
+		</script>
+	</head>
+	<body>
+		<div id='nav'>
+			<a href="/" style="text-decoration: none;">
+				<nav>
+					<img class='nameplate' src='/graphics/nameplate-thick.png'>
+					<img class='logo1' src='/graphics/logoleft.png'>
+					<img class='logo2' src='/graphics/logo.png'>
+				</nav>
+				<div class='nav-fade'></div>
+			</a>
+			<button onclick="skip()" id='skip'><span>Skip</span></button>
+		</div>
+		<main>
+			<h1 id='typedTitle'>
+				<noscript>
+					Welcome
+				</noscript>
+			</h1>
+			<p id='typedText'>
+				<noscript>
+					We are Black Thunder: a First LEGO League team from Reading School, UK. We are a group of around 40 11-16 year olds who enjoy robotics, and meet each Friday after school, to work on robot-related tasks; one of them is the FLL.
+					<br>
+					<br>
+					We have a blog, YouTube channel and Twitter feed, all of which can be seen below.
+				</noscript>
+			</p>
+			<noscript>
+				<style>
+					.YTContainer {
+						position: relative;
+						top: 0px;
+						opacity: 1;
+						display: block;
+					}
+					#typedText {
+						margin-bottom: 0;
+					}
+				</style>
+			</noscript>
+			<div class='YTContainer'>
+				<iframe id='YTChannel' src="https://www.youtube.com/embed/?listType=playlist&list=UUJP8htcgaZxm28hY3yX6WBw&autoplay=0" frameborder="0" allowfullscreen></iframe>
+				<iframe id='blog' src="https://blackthunderrobotics.wordpress.com/" frameborder="0"></iframe>
+				<div id='twitterContainer'>
+					<a class="twitter-timeline" href="https://twitter.com/blackthunderfll?ref_src=twsrc%5Etfw">Whoops! Something seems to have gone wrong! Click here to open our Twitter feed in a new tab.</a>
+				</div>
+				<footer>
+					&copy; Copyright Black Thunder FLL 2018 | <a href="/privacy-policy">Privacy Policy</a>
+				</footer>
+			</div>
+		</main>
+	</body>
+</html>
