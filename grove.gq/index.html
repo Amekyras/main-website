@@ -33,6 +33,17 @@
 				overflow-wrap: break-word;
 				word-wrap: normal;
 			}
+			button {
+				background: none;
+				border: none;
+				padding: 0;
+				margin: 0;
+				font-family: inherit;
+				font-size: inherit;
+				color: blue;
+				text-decoration: underline;
+				cursor: pointer;
+			}
 			@media screen and (max-width: 600px) {
 				container {
 					padding: 20px;
@@ -51,8 +62,13 @@
 				Sorry, but this page does not exist on <a href="https://www.grove.gq">www.grove.gq</a>. Please check that the URL is spelt correctly and try again.
 				<br>
 				<br>
-				Alternatively, you may be looking for the website itself: <a href="https://www.grove.gq">www.grove.gq</a>.
+				Alternatively, <button onclick="goBack();">go back</button>.
 			</p>
 		</div>
 	</body>
+	<script>
+		function goBack() {
+			window.history.back();
+		}
+	</script>
 </html>
