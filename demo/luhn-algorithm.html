@@ -12,13 +12,13 @@
         <meta name="description" content="Replication of the Luhn Algorithm - by Matthew Grove">
         <link rel="icon" href="/logo.jpg">
         <link href="/assets/roboto.css" rel="stylesheet">
-        
+
         <!-- Import Material Design Components & Icons -->
         <link rel="stylesheet" type="text/css" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
         rel="stylesheet">
         <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
-        
+
         <style>
             /* change material design theme */
             :root {
@@ -28,10 +28,13 @@
             .mdc-text-field--focused:not(.mdc-text-field--disabled) .mdc-floating-label {
                 color: var(--mdc-theme-primary);
             }
-            
+
             body {
                 font-family: 'Roboto', sans-serif;
                 text-align: center;
+            }
+            .mdc-text-field {
+                margin-bottom: 10px;
             }
         </style>
 
@@ -60,7 +63,7 @@
     <script>
         // initiate material design animations
         mdc.autoInit();
-        
+
         document.addEventListener("keyup", function(event) {
             event.preventDefault();
             if (event.keyCode === 13) {
@@ -69,7 +72,7 @@
                 document.getElementById("validation_message").innerHTML = null;
             }
         });
-        
+
         function checkNumber() {
             var digits = String(document.getElementsByTagName("input")[0].value).split("");
             digits = digits.reverse();
