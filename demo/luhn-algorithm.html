@@ -71,35 +71,48 @@
                 right: 15px;
             }
 
-            body {
-                display: flex;
-                height: 100vh;
+
+            html {
+              height: 100%;
             }
 
-
             body {
-                display: flex;
-                height: 100vh;
+              display: flex;
+              flex-direction: column;
+              min-height: 100%;
+              margin: 0;
             }
 
-            .mdc-drawer-app-content {
-                flex: auto;
-                overflow: auto;
+            .demo-body {
+              padding: 0;
+              margin: 0;
+              box-sizing: border-box;
+            }
+
+            .demo-main {
+              padding-left: 16px;
+              padding-bottom: 16px;
+              overflow: auto;
+            }
+
+            .app-drawer-layout {
+              display: flex;
+
+              .mdc-drawer--dismissible {
+                top: 64px;
+                height: calc(100% - 64px);
+              }
             }
 
             .main-content {
-                overflow: auto;
-                height: 100%;
-            }
-
-            .app-bar {
-                position: absolute;
+              flex: 1;
+              padding: 1.5rem;
             }
         </style>
 
     </head>
     <body>
-        <aside class="mdc-drawer mdc-drawer--dismissible">
+        <!-- <aside class="mdc-drawer mdc-drawer--dismissible">
             <div class="mdc-drawer__content">
                 <nav class="mdc-list">
                     <a class="mdc-list-item mdc-list-item--activated" href="#" aria-selected="true">
@@ -116,61 +129,115 @@
                     </a>
                 </nav>
             </div>
-        </aside>
-        <div class="mdc-drawer-app-content">
-            <h1>Luhn Algorithm</h1>
-            <header class="mdc-top-app-bar" data-mdc-auto-init="MDCTopAppBar">
-                <div class="mdc-top-app-bar__row">
-                    <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
-                        <a href="javascript:void(0)" class="material-icons mdc-top-app-bar__navigation-icon">menu</a>
-                        <span class="mdc-top-app-bar__title">Luhn Algorithm</span>
-                    </section>
-                    <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
-                        <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" aria-label="My Blog">home</a>
-                    </section>
-                </div>
-            </header>
-            <main>
-                <!-- input field (in container so that unwanted overflow from :before & :after is hidden) -->
-                <div class="mdc-text-field-container">
-                    <div class="mdc-text-field mdc-text-field--outlined" data-mdc-auto-init="MDCTextField">
-                      <input type="number" id="tf-outlined" class="mdc-text-field__input">
-                      <label for="tf-outlined" class="mdc-floating-label ">Your Number</label>
-                      <div class="mdc-notched-outline">
-                        <svg>
-                          <path class="mdc-notched-outline__path"/>
-                        </svg>
-                      </div>
-                      <div class="mdc-notched-outline__idle"></div>
-                    </div>
-                </div>
-                <!-- input field helper text -->
-                <p class="mdc-text-field-helper-text" aria-hidden="true">
-                  Validate with the Luhn Algorithm
-                </p>
-                <!-- button to submit & check number with Luhn algorithm -->
-                <button class="validation_button mdc-button mdc-button--outlined"  data-mdc-auto-init="MDCRipple" onclick="checkNumber()">
-                  <i class="material-icons mdc-button__icon">check_circle_outline</i>
-                  Check
-                </button>
-                <!-- displays evaluation of number by Luhn algorithm -->
-                <p id="validation_message"></p>
+        </aside> -->
 
-                <!-- link to source code on GitHub -->
-                <a href="https://github.com/mgrove36/mgrove36.github.io/blob/master/demo/luhn-algorithm.html" class="source-code-link mdc-fab mdc-fab--extended" data-mdc-auto-init="MDCRipple">
-                    <span class="material-icons mdc-fab__icon">rate_review</span>
-                    <span class="mdc-fab__label">View on GitHub</span>
-                </a>
-            </main>
+        <div class="mdc-top-app-bar">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="javascript:void(0)" class="mdc-top-app-bar__navigation-icon">
+                        <i class="material-icons">&#xE5C4;</i>
+                    </a>
+                    <span class="mdc-top-app-bar__title catalog-title">Dismissible Drawer</span>
+                </section>
+            </div>
+        </div>
+
+        <div class="app-drawer-layout mdc-top-app-bar--fixed-adjust">
+            <aside class="mdc-drawer mdc-drawer--dismissible demo-drawer">
+                <nav class="mdc-drawer__drawer">
+                    <nav class="mdc-drawer__content mdc-list-group">
+                        <div id="icon-with-text-demo" class="mdc-list">
+                            <a class="mdc-list-item mdc-list-item--selected demo-drawer-list-item" href="#">
+                                <i class="material-icons mdc-list-item__graphic" aria-hidden="true">inbox</i>Inbox
+                            </a>
+                            <a class="mdc-list-item demo-drawer-list-item" href="#">
+                                <i class="material-icons mdc-list-item__graphic" aria-hidden="true">star</i>Star
+                            </a>
+                            <a class="mdc-list-item demo-drawer-list-item" href="#">
+                                <i class="material-icons mdc-list-item__graphic" aria-hidden="true">send</i>Sent Mail
+                            </a>
+                            <a class="mdc-list-item demo-drawer-list-item" href="#">
+                                <i class="material-icons mdc-list-item__graphic" aria-hidden="true">drafts</i>Drafts
+                            </a>
+                        </div>
+
+                        <hr class="mdc-list-divider">
+
+                        <div class="mdc-list">
+                            <a class="mdc-list-item demo-drawer-list-item" href="#">
+                                <i class="material-icons mdc-list-item__graphic" aria-hidden="true">email</i>All Mail
+                            </a>
+                            <a class="mdc-list-item demo-drawer-list-item" href="#">
+                                <i class="material-icons mdc-list-item__graphic" aria-hidden="true">delete</i>Trash
+                            </a>
+                            <a class="mdc-list-item demo-drawer-list-item" href="#">
+                                <i class="material-icons mdc-list-item__graphic" aria-hidden="true">report</i>Spam
+                            </a>
+                        </div>
+                    </nav>
+                </nav>
+            </aside>
+
+            <div class="mdc-drawer-app-content">
+                <h1>Luhn Algorithm</h1>
+                <header class="mdc-top-app-bar" data-mdc-auto-init="MDCTopAppBar">
+                    <div class="mdc-top-app-bar__row">
+                        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                            <a href="javascript:void(0)" class="material-icons mdc-top-app-bar__navigation-icon">menu</a>
+                            <span class="mdc-top-app-bar__title">Luhn Algorithm</span>
+                        </section>
+                        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+                            <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" aria-label="My Blog">home</a>
+                        </section>
+                    </div>
+                </header>
+                <main>
+                    <!-- input field (in container so that unwanted overflow from :before & :after is hidden) -->
+                    <div class="mdc-text-field-container">
+                        <div class="mdc-text-field mdc-text-field--outlined" data-mdc-auto-init="MDCTextField">
+                          <input type="number" id="tf-outlined" class="mdc-text-field__input">
+                          <label for="tf-outlined" class="mdc-floating-label ">Your Number</label>
+                          <div class="mdc-notched-outline">
+                            <svg>
+                              <path class="mdc-notched-outline__path"/>
+                            </svg>
+                          </div>
+                          <div class="mdc-notched-outline__idle"></div>
+                        </div>
+                    </div>
+                    <!-- input field helper text -->
+                    <p class="mdc-text-field-helper-text" aria-hidden="true">
+                      Validate with the Luhn Algorithm
+                    </p>
+                    <!-- button to submit & check number with Luhn algorithm -->
+                    <button class="validation_button mdc-button mdc-button--outlined"  data-mdc-auto-init="MDCRipple" onclick="checkNumber()">
+                      <i class="material-icons mdc-button__icon">check_circle_outline</i>
+                      Check
+                    </button>
+                    <!-- displays evaluation of number by Luhn algorithm -->
+                    <p id="validation_message"></p>
+
+                    <!-- link to source code on GitHub -->
+                    <a href="https://github.com/mgrove36/mgrove36.github.io/blob/master/demo/luhn-algorithm.html" class="source-code-link mdc-fab mdc-fab--extended" data-mdc-auto-init="MDCRipple">
+                        <span class="material-icons mdc-fab__icon">rate_review</span>
+                        <span class="mdc-fab__label">View on GitHub</span>
+                    </a>
+                </main>
+            </div>
         </div>
     </body>
     <script>
-        // make navbar work
-        const topAppBar = mdc.topAppBar.MDCTopAppBar.attachTo(document.querySelector('.mdc-drawer'));
-        topAppBar.setScrollTarget(document.querySelector('.mdc-drawer-app-content'));
+        // Init MDC Drawer
+        const drawerEl = document.querySelector('.mdc-drawer');
+        const drawer = new mdc.drawer.MDCDrawer.attachTo(drawerEl);
+
+        const topAppBarEl = document.querySelector('.mdc-top-app-bar');
+        const topAppBar = new mdc.topAppBar.MDCTopAppBar.attachTo(topAppBarEl);
+        topAppBar.setScrollTarget(document.querySelector('.main-content'));
         topAppBar.listen('MDCTopAppBar:nav', () => {
             drawer.open = !drawer.open;
         });
+
 
         // include navbar
         $(function(){
