@@ -60,26 +60,43 @@
         </button>
         <p id="validation_message"></p>
         <a href="{% github_edit_link %}">View on GitHub</a>
+        <button class="mdc-fab mdc-fab--extended" data-mdc-auto-init="MDCRipple">
+            <span class="material-icons mdc-fab__icon">rate_review</span>
+            <span class="mdc-fab__label">View on GitHub</span>
+        </button>
     </body>
     <script>
         // initiate material design animations
         mdc.autoInit();
 
         document.addEventListener("keyup", function(event) {
+            // stop any code that may normally run when enter key pressed
             event.preventDefault();
+            // if enter key is pressed, run Luhn algorithm
             if (event.keyCode === 13) {
                 checkNumber();
             } else {
+                // if number in input field is being edited, remove previous number evaluation message
                 document.getElementById("validation_message").innerHTML = null;
             }
         });
 
+        // function for adding all the digits
+        function sumDigits(total,digit) {
+            return total + digit;
+        }
+
+        // function for validating number entered with Luhn algorithm
         function checkNumber() {
+            // reverse digits in number
             var digits = String(document.getElementsByTagName("input")[0].value).split("");
             digits = digits.reverse();
+            // makes sure only every other digit (counting from the right) is doubled
             var startingIndex = (digits.length % 2 == 0) ? 0 : 1;
+            // doubles every other digit
             for (var i = startingIndex; i < digits.length; i += 2) {
                 var newDigit = Number(digits[i]) * 2;
+                // if doubled digit is two digits, add them
                 while (newDigit > 9) {
                     var newDigits = String(newDigit).split("");
                     newDigit = 0;
@@ -87,16 +104,18 @@
                         newDigit += Number(item);
                     });
                 }
+                // replace old digit with new one
                 digits[i] = newDigit;
             }
+            // convert all digits to numbers (some were strings)
             digits.forEach(function(item, index) {
                 digits[index] = Number(item);
             });
-            function sumDigits(total,digit) {
-                return total + digit;
-            }
+            // sum the digits
             var sum = digits.reduce(sumDigits);
+            // check if number is valid by moduloing it by 10
             switch (sum % 10 == 0) {
+                // display appropriate evaluation message on page
                 case true:
                     document.getElementById("validation_message").innerHTML = "Number is valid";
                     break;
