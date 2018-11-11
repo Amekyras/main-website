@@ -122,7 +122,7 @@
             <header class="mdc-top-app-bar" data-mdc-auto-init="MDCTopAppBar">
                 <div class="mdc-top-app-bar__row">
                     <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
-                        <a href="#" class="material-icons mdc-top-app-bar__navigation-icon">menu</a>
+                        <a href="javascript:void(0)" class="material-icons mdc-top-app-bar__navigation-icon">menu</a>
                         <span class="mdc-top-app-bar__title">Luhn Algorithm</span>
                     </section>
                     <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
@@ -166,10 +166,10 @@
     </body>
     <script>
         // make navbar work
-        const topAppBar = MDCTopAppBar.attachTo(document.getElementById('app-bar'));
+        const topAppBar = mdl.topAppBar.MDCTopAppBar.attachTo(document.getElementById('app-bar'));
         topAppBar.setScrollTarget(document.getElementById('main-content'));
         topAppBar.listen('MDCTopAppBar:nav', () => {
-        drawer.open = !drawer.open;
+            drawer.open = !drawer.open;
         });
 
         // include navbar
