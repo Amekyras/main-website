@@ -71,73 +71,48 @@
                 right: 15px;
             }
 
-
+            /* for MDL navbar */
             html {
               height: 100%;
             }
-
             body {
               display: flex;
               flex-direction: column;
               min-height: 100%;
               margin: 0;
             }
-
             .demo-body {
-              padding: 0;
-              margin: 0;
-              box-sizing: border-box;
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
             }
-
             .demo-main {
-              padding-left: 16px;
-              padding-bottom: 16px;
-              overflow: auto;
+                padding-left: 16px;
+                padding-bottom: 16px;
+                overflow: auto;
             }
-
             .app-drawer-layout {
-              display: flex;
-
-              .mdc-drawer--dismissible {
+                display: flex;
+            }
+            .mdc-drawer--dismissible {
                 top: 64px;
                 height: calc(100% - 64px);
-              }
             }
-
-            .main-content {
-              flex: 1;
-              padding: 1.5rem;
+            .mdc-drawer-app-content {
+                flex: 1;
+                padding: 1.5rem;
             }
         </style>
 
     </head>
     <body>
-        <!-- <aside class="mdc-drawer mdc-drawer--dismissible">
-            <div class="mdc-drawer__content">
-                <nav class="mdc-list">
-                    <a class="mdc-list-item mdc-list-item--activated" href="#" aria-selected="true">
-                        <i class="material-icons mdc-list-item__graphic" aria-hidden="true">inbox</i>
-                        <span class="mdc-list-item__text">Inbox</span>
-                    </a>
-                    <a class="mdc-list-item" href="#">
-                        <i class="material-icons mdc-list-item__graphic" aria-hidden="true">send</i>
-                        <span class="mdc-list-item__text">Outgoing</span>
-                    </a>
-                    <a class="mdc-list-item" href="#">
-                        <i class="material-icons mdc-list-item__graphic" aria-hidden="true">drafts</i>
-                        <span class="mdc-list-item__text">Drafts</span>
-                    </a>
-                </nav>
-            </div>
-        </aside> -->
-
         <div class="mdc-top-app-bar">
             <div class="mdc-top-app-bar__row">
                 <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
                     <a href="javascript:void(0)" class="mdc-top-app-bar__navigation-icon">
-                        <i class="material-icons">&#xE5C4;</i>
+                        <i class="material-icons">menu</i>
                     </a>
-                    <span class="mdc-top-app-bar__title catalog-title">Dismissible Drawer</span>
+                    <span class="mdc-top-app-bar__title catalog-title">Luhn Algorithm</span>
                 </section>
             </div>
         </div>
@@ -180,17 +155,6 @@
 
             <div class="mdc-drawer-app-content">
                 <h1>Luhn Algorithm</h1>
-                <header class="mdc-top-app-bar" data-mdc-auto-init="MDCTopAppBar">
-                    <div class="mdc-top-app-bar__row">
-                        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
-                            <a href="javascript:void(0)" class="material-icons mdc-top-app-bar__navigation-icon">menu</a>
-                            <span class="mdc-top-app-bar__title">Luhn Algorithm</span>
-                        </section>
-                        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
-                            <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" aria-label="My Blog">home</a>
-                        </section>
-                    </div>
-                </header>
                 <main>
                     <!-- input field (in container so that unwanted overflow from :before & :after is hidden) -->
                     <div class="mdc-text-field-container">
