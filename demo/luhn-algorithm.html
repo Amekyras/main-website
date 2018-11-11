@@ -167,7 +167,7 @@
     <script>
         // make navbar work
         const topAppBar = mdc.topAppBar.MDCTopAppBar.attachTo(document.querySelector('.mdc-drawer'));
-        topAppBar.setScrollTarget(document.querySelector('.mdc-drawer-main-content'));
+        topAppBar.setScrollTarget(document.querySelector('.mdc-drawer-app-content'));
         topAppBar.listen('MDCTopAppBar:nav', () => {
             drawer.open = !drawer.open;
         });
