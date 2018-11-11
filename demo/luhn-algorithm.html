@@ -79,7 +79,7 @@
 
     </head>
     <body>
-        <aside class="mdc-drawer" data-mdc-auto-init="MDCDrawer">
+        <aside class="mdc-drawer mdc-drawer--dismissible" data-mdc-auto-init="MDCDrawer">
             <div class="mdc-drawer__content">
                 <nav class="mdc-list">
                     <a class="mdc-list-item mdc-list-item--activated" href="#" aria-selected="true">
@@ -97,50 +97,52 @@
                 </nav>
             </div>
         </aside>
-        <h1>Luhn Algorithm</h1>
-        <header class="mdc-top-app-bar" data-mdc-auto-init="MDCTopAppBar">
-            <div class="mdc-top-app-bar__row">
-                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
-                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon">menu</a>
-                    <span class="mdc-top-app-bar__title">Luhn Algorithm</span>
-                </section>
-                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
-                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" aria-label="My Blog">home</a>
-                </section>
-            </div>
-        </header>
-        <main>
-            <!-- input field (in container so that unwanted overflow from :before & :after is hidden) -->
-            <div class="mdc-text-field-container">
-                <div class="mdc-text-field mdc-text-field--outlined" data-mdc-auto-init="MDCTextField">
-                  <input type="number" id="tf-outlined" class="mdc-text-field__input">
-                  <label for="tf-outlined" class="mdc-floating-label ">Your Number</label>
-                  <div class="mdc-notched-outline">
-                    <svg>
-                      <path class="mdc-notched-outline__path"/>
-                    </svg>
-                  </div>
-                  <div class="mdc-notched-outline__idle"></div>
+        <div class="mdc-drawer-app-content">
+            <h1>Luhn Algorithm</h1>
+            <header class="mdc-top-app-bar" data-mdc-auto-init="MDCTopAppBar">
+                <div class="mdc-top-app-bar__row">
+                    <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                        <a href="#" class="material-icons mdc-top-app-bar__navigation-icon">menu</a>
+                        <span class="mdc-top-app-bar__title">Luhn Algorithm</span>
+                    </section>
+                    <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+                        <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" aria-label="My Blog">home</a>
+                    </section>
                 </div>
-            </div>
-            <!-- input field helper text -->
-            <p class="mdc-text-field-helper-text" aria-hidden="true">
-              Validate with the Luhn Algorithm
-            </p>
-            <!-- button to submit & check number with Luhn algorithm -->
-            <button class="validation_button mdc-button mdc-button--outlined"  data-mdc-auto-init="MDCRipple" onclick="checkNumber()">
-              <i class="material-icons mdc-button__icon">check_circle_outline</i>
-              Check
-            </button>
-            <!-- displays evaluation of number by Luhn algorithm -->
-            <p id="validation_message"></p>
+            </header>
+            <main>
+                <!-- input field (in container so that unwanted overflow from :before & :after is hidden) -->
+                <div class="mdc-text-field-container">
+                    <div class="mdc-text-field mdc-text-field--outlined" data-mdc-auto-init="MDCTextField">
+                      <input type="number" id="tf-outlined" class="mdc-text-field__input">
+                      <label for="tf-outlined" class="mdc-floating-label ">Your Number</label>
+                      <div class="mdc-notched-outline">
+                        <svg>
+                          <path class="mdc-notched-outline__path"/>
+                        </svg>
+                      </div>
+                      <div class="mdc-notched-outline__idle"></div>
+                    </div>
+                </div>
+                <!-- input field helper text -->
+                <p class="mdc-text-field-helper-text" aria-hidden="true">
+                  Validate with the Luhn Algorithm
+                </p>
+                <!-- button to submit & check number with Luhn algorithm -->
+                <button class="validation_button mdc-button mdc-button--outlined"  data-mdc-auto-init="MDCRipple" onclick="checkNumber()">
+                  <i class="material-icons mdc-button__icon">check_circle_outline</i>
+                  Check
+                </button>
+                <!-- displays evaluation of number by Luhn algorithm -->
+                <p id="validation_message"></p>
 
-            <!-- link to source code on GitHub -->
-            <a href="https://github.com/mgrove36/mgrove36.github.io/blob/master/demo/luhn-algorithm.html" class="source-code-link mdc-fab mdc-fab--extended" data-mdc-auto-init="MDCRipple">
-                <span class="material-icons mdc-fab__icon">rate_review</span>
-                <span class="mdc-fab__label">View on GitHub</span>
-            </a>
-        </main>
+                <!-- link to source code on GitHub -->
+                <a href="https://github.com/mgrove36/mgrove36.github.io/blob/master/demo/luhn-algorithm.html" class="source-code-link mdc-fab mdc-fab--extended" data-mdc-auto-init="MDCRipple">
+                    <span class="material-icons mdc-fab__icon">rate_review</span>
+                    <span class="mdc-fab__label">View on GitHub</span>
+                </a>
+            </main>
+        </div>
     </body>
     <script>
         // include navbar
