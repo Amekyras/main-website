@@ -99,7 +99,7 @@
 
     </head>
     <body>
-        <aside class="mdc-drawer mdc-drawer--dismissible" data-mdc-auto-init="MDCDrawer">
+        <aside class="mdc-drawer mdc-drawer--dismissible">
             <div class="mdc-drawer__content">
                 <nav class="mdc-list">
                     <a class="mdc-list-item mdc-list-item--activated" href="#" aria-selected="true">
@@ -166,8 +166,8 @@
     </body>
     <script>
         // make navbar work
-        const topAppBar = mdc.topAppBar.MDCTopAppBar.attachTo(document.getElementById('app-bar'));
-        topAppBar.setScrollTarget(document.getElementById('main-content'));
+        const topAppBar = mdc.topAppBar.MDCTopAppBar.attachTo(document.getElementById('mdc-drawer'));
+        topAppBar.setScrollTarget(document.getElementById('mdc-drawer-main-content'));
         topAppBar.listen('MDCTopAppBar:nav', () => {
             drawer.open = !drawer.open;
         });
