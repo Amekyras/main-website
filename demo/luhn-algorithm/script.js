@@ -14,7 +14,7 @@ document.addEventListener("keyup", function(event) {
 function checkNumber() {
     var number = document.getElementsByTagName("input")[0].value, sum = 0, digit = 0
     var isIndexEven = false;
-    
+
     for (var index = number.length - 1; index >= 0; index--) {
         var currentDigit = number.charAt(index), newDigit = parseInt(currentDigit, 10);
         if (isIndexEven) {
@@ -25,6 +25,9 @@ function checkNumber() {
         sum += newDigit;
         isIndexEven = !isIndexEven;
     }
-    
+
     $("#validation_message").html(((sum % 10) == 0) ? "Number is valid" : "Number is invalid");
 }
+
+$(".mdc-list-item[href='/demo/luhn-algorithm/']").addClass("mdc-list-item--activated");
+$(".mdc-list-item[href='/demo/luhn-algorithm/']").attr("aria-selected", "true");
