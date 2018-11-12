@@ -47,8 +47,14 @@
         <aside class="navbar-insert mdc-drawer mdc-drawer--dismissible"></aside>
 
         <div class="mdc-drawer-app-content">
-            <!-- content of top app bar is included via jQuery -->
-            <header class="mdc-top-app-bar app-bar" id="app-bar"></header>
+            <header class="mdc-top-app-bar app-bar" id="app-bar">
+                <div class="mdc-top-app-bar__row">
+                    <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                        <a href="javascript:void(0);" class="demo-mensu material-icons mdc-top-app-bar__navigation-icon">menu</a>
+                        <span class="mdc-top-app-bar__title">Luhn Algorithm</span>
+                    </section>
+                </div>
+            </header>
 
             <main class="main-content" id="main-content">
                 <div class="mdc-top-app-bar--fixed-adjust">
