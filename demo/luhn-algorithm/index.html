@@ -35,22 +35,22 @@
         <link href="/demo/assets/material-components-web.min.css" rel="stylesheet">
         <link href="/demo/assets/material_icons.css" rel="stylesheet">
         <script src="/demo/assets/material-components-web.min.js"></script>
-        
+
         <!-- import local styling & scripts -->
         <script src="/demo/assets/global.js"></script>
         <script src="script.js"></script>
         <link href="/demo/assets/global.css" rel="stylesheet">
         <link href="style.css" rel="stylesheet">
-        <link 
+        <link
     </head>
     <body>
         <!-- content of navbar is included via jQuery -->
         <aside class="navbar-insert mdc-drawer mdc-drawer--dismissible"></aside>
-        
+
         <div class="mdc-drawer-app-content">
             <!-- content of top app bar is included via jQuery -->
             <header class="mdc-top-app-bar app-bar" id="app-bar"></header>
-        
+
             <main class="main-content" id="main-content">
                 <div class="mdc-top-app-bar--fixed-adjust">
                     <!-- input field (in a container so that unwanted overflow from :before & :after is hidden) -->
@@ -84,4 +84,38 @@
             </main>
         </div>
     </body>
+    <script>
+//temporary
+    $(document).ready(function(){
+        // include navbar
+        $(".navbar-insert").load("/demo/page-inserts/navbar.html", function(){
+            // initiate MDC drawer
+            const drawer = new mdc.drawer.MDCDrawer.attachTo(document.querySelector('.mdc-drawer'));
+        });
+
+        // include top app bar
+        $(".mdc-top-app-bar").load("/demo/page-inserts/top-app-bar.html", function(){
+            // initiate MDC top app bar
+            const mdc-top-app-bar = new mdc.topAppBar.MDCTopAppBar.attachTo(document.querySelector('.mdc-top-app-bar'));
+            topAppBar.setScrollTarget(document.getElementById('main-content'));
+            topAppBar.listen('MDCTopAppBar:nav', () => {
+                drawer.open = !drawer.open;
+            });
+        });
+
+        // include source code link
+        $(".source-code-link").load("/demo/page-inserts/source-code-link.html", function(){alert("Done!");});
+
+        // initiate MDC buttons & FABs
+        const mdc-buttons = document.querySelectorAll('.mdc-button');
+        for (const button of mdc-buttons) {
+            mdc.ripple.MDCRipple.attachTo(button);
+        }
+        const mdc-fabs = document.querySelectorAll('.mdc-fab');
+        for (const fab of mdc-fabs) {
+            mdc.ripple.MDCRipple.attachTo(fab);
+        }
+    });
+
+    </script>
 </html>
