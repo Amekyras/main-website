@@ -37,11 +37,10 @@
         <script src="/demo/assets/material-components-web.min.js"></script>
 
         <!-- import local styling & scripts -->
-        <script src="/demo/assets/global.js"></script>
         <script src="script.js"></script>
-        <link href="/demo/assets/global.css" rel="stylesheet">
+        <script src="/demo/assets/global.js"></script>
         <link href="style.css" rel="stylesheet">
-        <link
+        <link href="/demo/assets/global.css" rel="stylesheet">
     </head>
     <body>
         <!-- content of navbar is included via jQuery -->
@@ -55,7 +54,7 @@
                 <div class="mdc-top-app-bar--fixed-adjust">
                     <!-- input field (in a container so that unwanted overflow from :before & :after is hidden) -->
                     <div class="mdc-text-field-container">
-                        <div class="mdc-text-field mdc-text-field--outlined" data-mdc-auto-init="MDCTextField">
+                        <div class="mdc-text-field mdc-text-field--outlined">
                             <input type="number" id="tf-outlined" class="mdc-text-field__input">
                             <label for="tf-outlined" class="mdc-floating-label ">Your Number</label>
                             <div class="mdc-notched-outline">

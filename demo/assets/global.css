@@ -1,4 +1,5 @@
-.mdc-text-field--focused:not(.mdc-text-field--disabled) .mdc-floating-label {
+/* implement colour theme on elements that don't have it applied by default */
+.mdc-text-field--focused:not(.mdc-text-field--disabled) .mdc-floating-label, .mdc-list-item--activated .mdc-list-item__text, .mdc-drawer .mdc-list-item--activated .mdc-list-item__graphic {
    color: var(--mdc-theme-primary);
 }
 .mdc-fab {
@@ -24,8 +25,10 @@ body {
 .source-code-link {
    position: fixed;
    bottom: 15px;
-   right: 15px;
+   right: 25px;
 }
+
+/* for MDC navbar */
 body {
     display: flex;
     height: 100vh;
