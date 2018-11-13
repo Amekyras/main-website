@@ -27,5 +27,10 @@ $(document).ready(function(){
         for (const text_field of mdc_text_fields) {
             mdc.textField.MDCTextField.attachTo(text_field);
         }
+        
+        $(".mdc-list-item[href='" + window.activated_drawer_item_link + "']").addClass("mdc-list-item--activated");
+        $(".mdc-list-item[href='" + window.activated_drawer_item_link + "']").attr("aria-selected", "true");
+        $(".mdc-list-item[href='" + window.activated_drawer_item_link + "/']").addClass("mdc-list-item--activated");
+        $(".mdc-list-item[href='" + window.activated_drawer_item_link + "/']").attr("aria-selected", "true");
     });
 });
