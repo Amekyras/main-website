@@ -28,6 +28,7 @@ $(document).ready(function(){
             mdc.textField.MDCTextField.attachTo(text_field);
         }
         
+        // initiate helper texts
         const helper_texts = document.querySelectorAll(".mdc-text-field-helper-text");
         for (const helper_text of helper_texts) {
             mdc.textFieldHelperText.MDCTextFieldHelperText.attachTo(helper_text);
