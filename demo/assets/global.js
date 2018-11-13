@@ -29,8 +29,8 @@ $(document).ready(function(){
         }
         
         // initiate helper texts
-        const helper_texts = document.querySelectorAll(".mdc-text-field-helper-text");
-        for (const helper_text of helper_texts) {
+        const mdc_helper_texts = document.querySelectorAll(".mdc-text-field-helper-text");
+        for (const helper_text of mdc_helper_texts) {
             mdc.textFieldHelperText.MDCTextFieldHelperText.attachTo(helper_text);
         }
         
