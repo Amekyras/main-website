@@ -1,7 +1,4 @@
-$(document).ready(function() {
-    $(".mdc-list-item[href='/demo/luhn-algorithm/']").addClass("mdc-list-item--activated");
-    $(".mdc-list-item[href='/demo/luhn-algorithm/']").attr("aria-selected", "true");
-});
+window.activated_drawer_item_link = "/demo/luhn-algorithm";
 
 document.addEventListener("keyup", function(event) {
     // stop any code that may normally run when enter key pressed
