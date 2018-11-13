@@ -31,12 +31,13 @@ $(document).ready(function(){
         // initiate helper texts
         const mdc_helper_texts = document.querySelectorAll(".mdc-text-field-helper-text");
         for (const helper_text of mdc_helper_texts) {
-            mdc.textField.MDCHelperText.attachTo(helper_text);
+            mdc.textField.helperText.MDCTextFieldHelperText.attachTo(helper_text);
         }
         
-        $(".mdc-list-item[href='" + window.activated_drawer_item_link + "']").addClass("mdc-list-item--activated");
-        $(".mdc-list-item[href='" + window.activated_drawer_item_link + "']").attr("aria-selected", "true");
-        $(".mdc-list-item[href='" + window.activated_drawer_item_link + "/']").addClass("mdc-list-item--activated");
-        $(".mdc-list-item[href='" + window.activated_drawer_item_link + "/']").attr("aria-selected", "true");
+        var drawer_item_link_query_selector = ".mdc-list-item[href='" + window.activated_drawer_item_link;
+        $(drawer_item_link_query_selector + "']").addClass("mdc-list-item--activated");
+        $(drawer_item_link_query_selector + "']").attr("aria-selected", "true");
+        $(drawer_item_link_query_selector + "/']").addClass("mdc-list-item--activated");
+        $(drawer_item_link_query_selector + "/']").attr("aria-selected", "true");
     });
 });
