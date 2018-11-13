@@ -28,6 +28,11 @@ $(document).ready(function(){
             mdc.textField.MDCTextField.attachTo(text_field);
         }
         
+        const helper_texts = document.querySelectorAll(".mdc-text-field-helper-text");
+        for (const helper_text of helper_texts) {
+            mdc.textFieldHelperText.MDCTextFieldHelperText.attachTo(helper_text);
+        }
+        
         $(".mdc-list-item[href='" + window.activated_drawer_item_link + "']").addClass("mdc-list-item--activated");
         $(".mdc-list-item[href='" + window.activated_drawer_item_link + "']").attr("aria-selected", "true");
         $(".mdc-list-item[href='" + window.activated_drawer_item_link + "/']").addClass("mdc-list-item--activated");
