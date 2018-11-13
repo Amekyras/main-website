@@ -31,7 +31,7 @@ $(document).ready(function(){
         // initiate helper texts
         const mdc_helper_texts = document.querySelectorAll(".mdc-text-field-helper-text");
         for (const helper_text of mdc_helper_texts) {
-            mdc.textField.MDCTextFieldHelperText.attachTo(helper_text);
+            mdc.textField.MDCHelperText.attachTo(helper_text);
         }
         
         $(".mdc-list-item[href='" + window.activated_drawer_item_link + "']").addClass("mdc-list-item--activated");
